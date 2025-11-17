@@ -12,11 +12,16 @@ public class FunRestController {
     // define a private filed for the dependency
     private Coach myCoach;
 
-    // define a constructor for the dependency injection.
     @Autowired
-    public FunRestController(@Qualifier("trackCoach") Coach theCoach) {
+    public FunRestController(Coach theCoach) {
         myCoach = theCoach;
     }
+
+    // define a constructor for the dependency injection.
+//    @Autowired
+//    public FunRestController(@Qualifier("trackCoach") Coach theCoach) {
+//        myCoach = theCoach;
+//    }
 
     // setter injection
 //    @Autowired
