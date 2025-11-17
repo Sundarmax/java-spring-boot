@@ -12,8 +12,14 @@ public class FunRestController {
     private Coach myCoach;
 
     // define a constructor for the dependency injection.
+//    @Autowired
+//    public FunRestController(Coach theCoach) {
+//        myCoach = theCoach;
+//    }
+
+    // setter injection
     @Autowired
-    public FunRestController(Coach theCoach) {
+    public void setCoach(Coach theCoach){
         myCoach = theCoach;
     }
     // expose "/" that return "Hello World"
