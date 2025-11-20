@@ -18,12 +18,12 @@ public class FunRestController {
 //    }
 
     // define a constructor for the dependency injection.
-    @Autowired
-    public FunRestController(@Qualifier("trackCoach") Coach theCoach,
-                             @Qualifier("trackCoach") Coach theAnotherCoach) {
-            myCoach = theCoach;
-            myCoach2 = theAnotherCoach;
-    }
+//    @Autowired
+//    public FunRestController(@Qualifier("trackCoach") Coach theCoach,
+//                             @Qualifier("trackCoach") Coach theAnotherCoach) {
+//            myCoach = theCoach;
+//            myCoach2 = theAnotherCoach;
+//    }
 
     // setter injection
 //    @Autowired
@@ -36,13 +36,19 @@ public class FunRestController {
         return  "Hello World !";
     }
 
-    @GetMapping("/dailyworkout")
-    public String getDailyWorkout() {
-        return myCoach.getDailyWorkout();
+//    @GetMapping("/dailyworkout")
+//    public String getDailyWorkout() {
+//        return myCoach.getDailyWorkout();
+//    }
+
+//    @GetMapping("/check")
+//    public String check() {
+//        return "Comparing beans : myCoach == myCoach2 , " + (myCoach == myCoach2);
+//    }
+
+    @Autowired
+    public FunRestController(@Qualifier("trackCoach") Coach theTrackCoach) {
+        myCoach = theTrackCoach;
     }
 
-    @GetMapping("/check")
-    public String check() {
-        return "Comparing beans : myCoach == myCoach2 , " + (myCoach == myCoach2);
-    }
 }
