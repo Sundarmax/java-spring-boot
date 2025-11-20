@@ -36,19 +36,19 @@ public class FunRestController {
         return  "Hello World !";
     }
 
-//    @GetMapping("/dailyworkout")
-//    public String getDailyWorkout() {
-//        return myCoach.getDailyWorkout();
-//    }
-
 //    @GetMapping("/check")
 //    public String check() {
 //        return "Comparing beans : myCoach == myCoach2 , " + (myCoach == myCoach2);
 //    }
 
     @Autowired
-    public FunRestController(@Qualifier("trackCoach") Coach theTrackCoach) {
-        myCoach = theTrackCoach;
+    public FunRestController(@Qualifier("sundarmax") Coach theSwimCoach) {
+        myCoach = theSwimCoach;
+    }
+
+    @GetMapping("/dailyworkout")
+    public String getDailyWorkout() {
+        return myCoach.getDailyWorkout();
     }
 
 }
